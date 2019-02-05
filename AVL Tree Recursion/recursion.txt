@@ -1,0 +1,94 @@
+Sanval Sohail  500760649
+Johnathan Cruz 500761803
+Fahim Nadeem   500777986
+--------------------------------
+--------------------------------
+The below queries are queries done for the everyOther(List1,List2) predicates.
+The goal of this predicate is to tell whether or not List2 is a list of every 
+other element from list1.
+------------- Q2.1 -------------
+--------------------------------
+?- everyOther([], []).
+Yes (0.00s cpu)
+?- everyOther([a], [a]).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+?- everyOther([a, b, c, d, e, f], [a, c, e]).
+Yes (0.00s cpu)
+?- everyOther([a, b, c], [a, c]).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+?- everyOther([a, b, c], []).
+No (0.00s cpu)
+?- everyOther([a, b, c], [a, b]).
+No (0.00s cpu)
+?- everyOther([1, 2, 3, 4, 5, 6, 7, 8], X).
+X = [1, 3, 5, 7]
+Yes (0.00s cpu)
+--------------------------------
+--------------------------------
+
+The below queries illustrate that the removeDups predicates are working as intented.
+As you can see some of the queries respond that there are multiple solutions for a given
+query when they should only really have one. I am certain this is not a problem with my code
+but has to do with how prolog handles backtracking and presents branch pathing. The solutions for
+said queries end up being exactly the same and dont result in differing solutons. You can see proof
+of this if you look at "?- removeDups([a, b, c, b, d, b, c, a], [d, b, c, a])." and 
+"?- removeDups([a, b, c, b, d, b, c, a], X).", these queries illustrate what I mentioned about
+the answers being the same even though it shows multiple solutions.
+------------- Q2.2 -------------
+--------------------------------
+?- removeDups([a], [a]).
+Yes (0.00s cpu)
+?- removeDups([a, b, c], [a, b, c]).
+Yes (0.00s cpu)
+?- removeDups([a, b, c, d], [a, b, c, d]).
+Yes (0.00s cpu)
+?- removeDups([d, a, b, c, d], [a, b, c, d]).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.05s cpu)
+?- removeDups([d, a, b, c, d], [d, a, b, c]).
+No (0.00s cpu)
+?- removeDups([a, b, c, b, d, b, c, a], [d, b, c, a]).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.03s cpu, solution 2, maybe more)
+No (0.03s cpu)
+?- removeDups([a, b, c, b, d, b, c, a], X).
+X = [d, b, c, a]
+Yes (0.00s cpu, solution 1, maybe more)
+X = [d, b, c, a]
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+?- removeDups([1, 2, 3, 4, 5, 6, 3, 2, 1], X).
+X = [4, 5, 6, 3, 2, 1]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
+--------------------------------
+--------------------------------
+
+Queries for sameFirstLast. I was initially using the last predicate
+which is a standard predicate for prolog but did not know if it was allowed
+so I didnt end up using it and instead used just lists and recursion.
+I recursively deleted elements from the list until it called my base case
+which is there are only two elements left in the list which are the same.
+------------- Q2.3 -------------
+--------------------------------
+?- sameFirstLast([[a], z, b, c, d, [a]]).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+?- sameFirstLast([21, 22, [k, l, m], 21]).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+?- sameFirstLast([a, b, [a, b]]).
+No (0.00s cpu)
+?- sameFirstLast([a, [c, [d]], b]).
+No (0.00s cpu)
+?- sameFirstLast([1, X1, X2, X3, X4, 1]).
+X1 = X1
+X2 = X2
+X3 = X3
+X4 = X4
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
+--------------------------------
+--------------------------------

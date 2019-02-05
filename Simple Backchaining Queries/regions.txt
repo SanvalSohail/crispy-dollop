@@ -1,0 +1,58 @@
+500777986 Fahim Nadeem
+500760649 Sanval Sohail
+500761803 Jonathan cruz
+
+?- connected(r1, r3).
+No (0.00s cpu)
+?- connected(r1, r3).
+No (0.00s cpu)
+?- connected(r1, r4).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.02s cpu)
+?- dc(r1, r4).
+No (0.00s cpu)
+?- dc(r3, r8).
+Yes (0.00s cpu)
+?- related(r1, r2).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+?- related(r10, r6).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.02s cpu, solution 2, maybe more)
+Yes (0.03s cpu, solution 3, maybe more)
+No (0.05s cpu)
+?- related(r1, r7).
+No (0.00s cpu)
+?- partOf(r34, r4).
+Yes (0.00s cpu)
+?- partOf(r2, r4).
+No (0.00s cpu)
+?- overlaps(r1, r4).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.00s cpu, solution 2, maybe more)
+Yes (0.00s cpu, solution 3, maybe more)
+Yes (0.00s cpu, solution 4, maybe more)
+Yes (0.00s cpu, solution 5, maybe more)
+No (0.02s cpu)
+?- overlaps(r10, r6).
+No (0.00s cpu)
+?- touch(r6, r10).
+Yes (0.00s cpu)
+?- touch(r1, r24).
+No (0.00s cpu)
+?- tangentPartOf(r5, r6).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.02s cpu, solution 2, maybe more)
+No (0.02s cpu)
+?- tangentPartOf(r1, r8).
+No (0.00s cpu)
+?- inside(r7, r8).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.02s cpu, solution 2, maybe more)
+No (0.03s cpu)
+?- inside(r14, r1).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.00s cpu, solution 2, maybe more)
+Yes (0.00s cpu, solution 3, maybe more)
+Yes (0.00s cpu, solution 4, maybe more)
+Yes (0.00s cpu, solution 5)

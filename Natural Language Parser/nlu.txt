@@ -1,0 +1,161 @@
+/********** Part 1 **********/
+
+/********** Querie 1 **********/
+?- hasBook(X, cruz, _100, _101).
+X = chapters
+Yes (0.00s cpu)
+/********** Querie 2 **********/
+?- hasBook(X, _91, thinking_as_computation, _93), cheap(X, thinking_as_computation).
+No (0.00s cpu)
+/********** Querie 3 **********/
+?- lives(X, new_york).
+X = levesque
+Yes (0.00s cpu, solution 1, maybe more)
+X = golding
+Yes (0.00s cpu, solution 2)
+/********** Querie 4 **********/
+?- shipping(X, toronto, _100), cheap(X, Y).
+X = indigo
+Y = rowling
+Yes (0.00s cpu, solution 1, maybe more)
+X = amazon
+Y = toronto
+Yes (0.00s cpu, solution 2, maybe more)
+X = chapters
+Y = rowling
+Yes (0.00s cpu, solution 3, maybe more)
+X = chapters
+Y = cruz
+Yes (0.02s cpu, solution 4, maybe more)
+X = chapters
+Y = nikolas
+Yes (0.02s cpu, solution 5, maybe more)
+No (0.03s cpu)
+/********** Querie 5 **********/
+?- hasBook(_,_,X,120).
+?- shipping(X,toronto,_).
+?- price(smalltalk_is_the_best, X).
+?- lives(zork, X).
+?- hasBook(X,sanval,Y,Z).
+?- hasBook(amazon,_,X,_).
+/********** Querie 6 **********/
+?- shipping(X, toronto, _77).
+X = indigo
+Yes (0.00s cpu, solution 1, maybe more)
+/********** Querie 7 **********/
+?- hasBook(_91, _92, X, 120).
+X = lord_of_the_flies
+Yes (0.00s cpu, solution 1, maybe more)
+/********** Querie 8 **********/
+?- price(smalltalk_is_the_best, X).
+X = low
+Yes (0.00s cpu)
+/********** Querie 9 **********/
+?- lives(zork, X).
+X = andromeda
+Yes (0.00s cpu)
+/********** Querie 10 **********/
+?- hasBook(X, sanval, Y, Z).
+X = chapters
+Y = guide_to_success
+Z = 200
+Yes (0.00s cpu)
+/********** Querie 11 **********/
+?- hasBook(amazon, _92, X, _94).
+X = harry_potter
+Yes (0.00s cpu, solution 1, maybe more)
+
+/********** Part 4 **********/
+
+
+/********** Querie 1 **********/
+?- who([an, author, from, toronto], A).
+A = nikolas
+Yes (0.00s cpu, solution 1, maybe more)
+A = nikolas
+Yes (0.02s cpu, solution 2, maybe more)
+No (0.02s cpu)
+
+/********** Querie 2 **********/
+?- who([an, author, of, an, expensive, book, at, amazon], A).
+No (0.00s cpu)
+/********** Querie 3 **********/
+?- who([a, person, from, new_york], P).
+P = levesque
+Yes (0.00s cpu, solution 1, maybe more)
+P = golding
+Yes (0.02s cpu, solution 2, maybe more)
+No (0.02s cpu)
+/********** Querie 4 **********/
+?- what([a, bookstore, with, a, high, shipping, to, toronto], B).
+No (0.00s cpu)
+/********** Querie 5 **********/
+?- what([a, book, from, amazon], B).
+No (0.00s cpu)
+?- what([a, book, from, amazon], B).
+B = thinking_as_computation
+Yes (0.00s cpu, solution 1, maybe more)
+B = artificial_intelligence
+Yes (0.01s cpu, solution 2, maybe more)
+B = harry_potter
+Yes (0.01s cpu, solution 3, maybe more)
+B = harry_potter
+Yes (0.01s cpu, solution 4, maybe more)
+B = artificial_intelligence
+Yes (0.01s cpu, solution 5, maybe more)
+B = thinking_as_computation
+Yes (0.01s cpu, solution 6, maybe more)
+B = computational_intelligence
+Yes (0.01s cpu, solution 7, maybe more)
+No (0.01s cpu)
+/********** Querie 6 **********/
+?- what([an, book, by, levesque], B).
+B = thinking_as_computation
+Yes (0.00s cpu, solution 1, maybe more)
+B = thinking_as_computation
+Yes (0.02s cpu, solution 2, maybe more)
+B = thinking_as_computation
+Yes (0.05s cpu, solution 3, maybe more)
+B = thinking_as_computation
+Yes (0.05s cpu, solution 4, maybe more)
+No (0.05s cpu)
+/********** Querie 7 **********/
+?- what([an, moderate, book, by, levesque], B).
+B = thinking_as_computation
+Yes (0.00s cpu, solution 1, maybe more)
+B = thinking_as_computation
+Yes (0.03s cpu, solution 2, maybe more)
+B = thinking_as_computation
+Yes (0.03s cpu, solution 3, maybe more)
+B = thinking_as_computation
+Yes (0.03s cpu, solution 4, maybe more)
+No (0.05s cpu)
+/********** Querie 8 **********/
+?- what([an, expensive, book, by, levesque], B).
+No (0.00s cpu)
+/********** Querie 9 **********/
+?- what([a, book, by, levesque, at, indigo], B).
+B = thinking_as_computation
+Yes (0.00s cpu, solution 1, maybe more)
+B = thinking_as_computation
+Yes (0.05s cpu, solution 2, maybe more)
+B = thinking_as_computation
+Yes (0.05s cpu, solution 3, maybe more)
+B = thinking_as_computation
+Yes (0.05s cpu, solution 4, maybe more)
+No (0.08s cpu)
+/********** Querie 10 **********/
+?- what([a, moderate, book, by, levesque, at, indigo], B).
+B = thinking_as_computation
+Yes (0.00s cpu, solution 1, maybe more)
+B = thinking_as_computation
+Yes (0.02s cpu, solution 2, maybe more)
+B = thinking_as_computation
+Yes (0.02s cpu, solution 3, maybe more)
+B = thinking_as_computation
+Yes (0.02s cpu, solution 4, maybe more)
+No (0.02s cpu)
+/********** Querie 11 **********/
+?- what([a, expensive, book, by, levesque, at, indigo], B).
+No (0.00s cpu)
+

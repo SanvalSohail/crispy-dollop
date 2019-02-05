@@ -1,0 +1,37 @@
+500777986 Fahim Nadeem
+500760649 Sanval Sohail
+500761803 Jonathan cruz
+
+?- canScore(r1).
+Yes (0.00s cpu, solution 1, maybe more)
+Yes (0.00s cpu, solution 2, maybe more)
+No (0.00s cpu)
+?- canScore(r2).
+No (0.00s cpu)
+?- canScore(r3).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+canScore(r1) -> canScore(r1) :- hasBall(r1)[false], open(r1)[true]. Fails
+	     -> canScore(r1) :- canAssist(R1,r1)[exhaustive search for R1], open(r1)[true] 
+										-> open(r1) :- pathClear(r1,goal)[true]. Succeeds with R1 = r3.
+						-> canAssist(R1,r1) :- hasBall(R1),pathClear(R1,r1) [R1 = r2] Fails
+			  Trys another variable -> canAssist(R1,r1) :- hasBall(R1),pathClear(R1,r1) [R1 = r3] Succeeds 
+
+More Solutions? Exhaust first canAssist before coming to the second canAssist.
+ 
+	     -> canScore(r1) :- canAssist(R1,r1)[exhaustive search for R1],open(r1)[true]
+											-> -> open(r1) :- pathClear(r1,goal)[true]. Succeeds with R3 = r2 and R1 = r3.
+					       -> canAssist(R1,r1) :- pathClear(R3,r1), canAssist(R1,R3)
+									-> R3 = r2
+									-> pathClear(r2,r1), canAssist(R1,r2)
+											    -> R1 = r3
+									-> pathClear(r2,r1), canAssist(r3,r2)
+										-> canAssist(r3,r2) :- hasBall(r3)[true], pathClear(r3,r2)[true]. Moves on to open(R).
+
+Other traces for r1 fail.
+
+canScore(r2) -> goes through all traces and fails.
+
+canScore(r3) -> hasBall(r3)[true], open(r3)
+					-> open(r3) :- pathClear(r3,goal)[true]. Succeeds 

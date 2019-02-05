@@ -1,0 +1,38 @@
+1.
+
+[P] and [ [desk, chair | [lamp | [] ] ] | Q]  -----   with q being empty list 
+[[desk, chair | [lamp ] ] ]
+[[desk, chair, lamp] ] ----- if P == [desk, chair, lamp]
+
+2. [eng | [Q | [R | S] ] ] and [R | [Q | AI721] ] ----- if S == [ ]
+[eng | [Q | [R] ] ]
+cannot be equal
+
+3. [ [R | S], [R] | S] and  [ [P | Q], [Q], x, y] ----- if S = [x,y]
+[ [R | S], [R], x, y]  -----  if R = [x,y] P = [x,y] Q = [x,y] Q = [x,y] 
+
+4. [Var | [ [d], d] ] and [const, X | X] if X == [d]
+[Var, [d], d]       [const, [d] | [d] ]
+[Var, [d], d]       [const, [d], d]
+
+5. [P, Q, [a, Q] ] and [a, b, [R | [R] ] ] 
+[a, b, [R, R] ] 
+cannot be equal 
+
+6. [Z, d | Z] and [ [] | [d, [] ] ] if Z == []
+[ [], d, [] ]    and [ [], d | [] ]
+[d]   and  [d]
+
+7. [j, [k, l, m], l, m] and [j, [k | LIST], LIST]    if LIST == [l, m]
+[j, [k, l, m], [l, m] ] 
+cannot be equal
+
+8. [ryerson, P, Q | R] and [Q | [ [cs, Q] | [ryerson | P ] ] ]  if P == []
+[ Q | [ [cs, Q] | [ryerson] ] ]
+[ Q | [ [cs, Q], ryerson] ]
+[ Q, [cs, Q], ryerson]
+
+
+ 
+
+
